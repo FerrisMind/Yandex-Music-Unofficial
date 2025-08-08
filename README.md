@@ -2,7 +2,9 @@
 
 <div align="center">
 
-# 🎵 Yandex Music (Unofficial)
+<img src=".git/assets/icon.svg" width="100" height="100" alt="Yandex Music Icon">
+
+# Yandex Music (Unofficial)
 
 **Unofficial desktop client for Yandex.Music built with Tauri**
 
