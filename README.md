@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src=".git/assets/icon.svg" width="100" height="100" alt="Yandex Music Icon">
+<img src=".github/assets/icon.svg" width="100" height="100" alt="Yandex Music Icon">
 
 # Yandex Music (Unofficial)
 

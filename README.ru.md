@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src=".git/assets/icon.svg" width="100" height="100" alt="Иконка Яндекс Музыки">
+<img src=".github/assets/icon.svg" width="100" height="100" alt="Иконка Яндекс Музыки">
 
 # Яндекс Музыка (Unofficial)
 
