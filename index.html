@@ -7,16 +7,45 @@
     <meta name="theme-color" content="#0d0d0d" />
     <title>Яндекс Музыка (Unofficial)</title>
     <script type="module" src="/src/main.ts" defer></script>
+    <style>
+      /* Дополнительная защита от контекстного меню */
+      * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    </style>
   </head>
 
-  <body>
+  <body oncontextmenu="return false;">
     <main class="container">
       <h1>Яндекс Музыка (Unofficial)</h1>
       <p>Перенаправление на Яндекс Музыку...</p>
       <script>
-        // Отключение контекстного меню
+        // Многоуровневое отключение контекстного меню
         document.addEventListener('contextmenu', function(event) {
           event.preventDefault();
+          event.stopPropagation();
+          return false;
+        }, true);
+        
+        window.addEventListener('contextmenu', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          return false;
+        }, true);
+        
+        // Отключение для всех элементов
+        document.addEventListener('DOMContentLoaded', function() {
+          const allElements = document.querySelectorAll('*');
+          allElements.forEach(element => {
+            element.addEventListener('contextmenu', function(event) {
+              event.preventDefault();
+              event.stopPropagation();
+              return false;
+            }, true);
+          });
         });
         
         // Перенаправление на Яндекс Музыку

@@ -13,12 +13,24 @@
     "withGlobalTauri": true,
     "windows": [
       {
+        "label": "main",
         "title": "Яндекс Музыка (Unofficial)",
         "width": 1200,
         "height": 800,
         "minWidth": 768,
         "minHeight": 261,
-        "url": "https://music.yandex.ru/"
+        "url": "https://music.yandex.ru/",
+        "decorations": true,
+        "transparent": false,
+        "resizable": true,
+        "fullscreen": false,
+        "maximizable": true,
+        "minimizable": true,
+        "closable": true,
+        "skipTaskbar": false,
+        "alwaysOnTop": false,
+        "visible": true,
+        "center": true
       }
     ],
     "security": {
