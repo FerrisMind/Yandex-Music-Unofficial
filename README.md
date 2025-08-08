@@ -1,6 +1,6 @@
 [🇷🇺 Русская версия](README.ru.md)
 
-<div align="left">
+<div align="center">
 
 <img src=".github/assets/icon.svg" width="100" height="100" alt="Yandex Music Icon">
 
