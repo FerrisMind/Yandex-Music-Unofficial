@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d0d0d" />
+    <title>Яндекс Музыка (Unofficial)</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Яндекс Музыка (Unofficial)</h1>
+      <p>Перенаправление на Яндекс.Музыку...</p>
+      <script>
+        // Отключение контекстного меню
+        document.addEventListener('contextmenu', function(event) {
+          event.preventDefault();
+        });
+        
+        // Перенаправление на Яндекс.Музыку
+        window.location.href = 'https://music.yandex.ru/';
+      </script>
+    </main>
+  </body>
+</html>
