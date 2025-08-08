@@ -6,14 +6,14 @@
 
 # Yandex Music (Unofficial)
 
-**Unofficial desktop client for Yandex.Music built with Tauri**
+**Unofficial desktop client for Yandex Music built with Tauri**
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/FerrisMind/Yandex_Music)
 [![Platform](https://img.shields.io/badge/platform-Windows-blue.svg)](https://github.com/FerrisMind/Yandex_Music)
 [![License](https://img.shields.io/badge/license-Unofficial-red.svg)](https://github.com/FerrisMind/Yandex_Music)
 [![Tauri](https://img.shields.io/badge/framework-Tauri-purple.svg)](https://tauri.app/)
 
-*A native Windows application that provides seamless access to Yandex.Music in a dedicated desktop window*
+*A native Windows application that provides seamless access to Yandex Music in a dedicated desktop window*
 
 </div>
 
@@ -23,7 +23,7 @@
 
 - 🖥️ **Native Windows Application** - Built with Tauri for optimal performance
 - 🚀 **Fast Loading** - Quick startup and smooth operation
-- 🎵 **Full Music Access** - Complete access to Yandex.Music web interface
+- 🎵 **Full Music Access** - Complete access to Yandex Music web interface
 
 ## 🚀 Tauri Advantages
 

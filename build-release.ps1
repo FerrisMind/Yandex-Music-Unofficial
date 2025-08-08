@@ -1,4 +1,4 @@
-Write-Host "Сборка релизной версии Яндекс.Музыки..." -ForegroundColor Green
+Write-Host "Сборка релизной версии Яндекс Музыки..." -ForegroundColor Green
 Write-Host ""
 
 Write-Host "Очистка предыдущих сборок..." -ForegroundColor Yellow
