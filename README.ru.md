@@ -55,8 +55,8 @@
 
 1. **Клонируйте репозиторий**
    ```bash
-   git clone https://github.com/FerrisMind/Yandex_Music.git
-   cd Yandex_Music
+   git clone https://github.com/FerrisMind/Yandex-Music-Unofficial.git
+   cd Yandex-Music-Unofficial
    ```
 
 2. **Установите зависимости**
