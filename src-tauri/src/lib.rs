@@ -55,6 +55,48 @@ pub fn run() {
                 document.head.appendChild(style);
             ").unwrap();
             
+            // Глобальная политика для куки: path=/, Secure (на HTTPS), SameSite=Lax.
+            // Также сохраняем маркер согласия на все куки в корневом пути.
+            window
+                .eval(r#"
+                (function () {
+                  function setCookie(name, value, options) {
+                    var params = options || {};
+                    var days = typeof params.days === 'number' ? params.days : 3650;
+                    var sameSite = params.sameSite || 'Lax';
+                    var path = params.path || '/';
+                    var secure = params.secure !== false; // по умолчанию true на HTTPS
+                    var expires = new Date(Date.now() + days * 864e5).toUTCString();
+                    var cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path;
+                    if (secure && location.protocol === 'https:') cookie += '; Secure';
+                    if (sameSite) cookie += '; SameSite=' + sameSite;
+                    document.cookie = cookie;
+                  }
+
+                  var cookieProp = Object.getOwnPropertyDescriptor(Document.prototype, 'cookie')
+                    || Object.getOwnPropertyDescriptor(HTMLDocument.prototype, 'cookie');
+                  if (cookieProp && cookieProp.set && cookieProp.get) {
+                    Object.defineProperty(document, 'cookie', {
+                      configurable: true,
+                      enumerable: cookieProp.enumerable,
+                      get: function () { return cookieProp.get.call(document); },
+                      set: function (value) {
+                        var v = String(value || '');
+                        if (!/;\s*path=/i.test(v)) v += '; path=/';
+                        if (location.protocol === 'https:' && !/;\s*secure/i.test(v)) v += '; Secure';
+                        if (!/;\s*samesite=/i.test(v)) v += '; SameSite=Lax';
+                        return cookieProp.set.call(document, v);
+                      }
+                    });
+                  }
+
+                  if (!/app_cookies_consent=/.test(document.cookie)) {
+                    setCookie('app_cookies_consent', 'all', { days: 3650, path: '/', secure: true, sameSite: 'Lax' });
+                  }
+                })();
+                "#)
+                .unwrap();
+            
             Ok(())
         })
         .run(tauri::generate_context!())
