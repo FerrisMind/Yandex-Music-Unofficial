@@ -45,6 +45,22 @@ function disableContextMenu() {
 // Применяем отключение контекстного меню
 disableContextMenu();
 
+// Обработчики событий для системного трея
+const tauriWindow = window as any;
+if (tauriWindow.__TAURI__) {
+  const { appWindow } = tauriWindow.__TAURI__;
+  
+  // Слушаем события от системного трея
+  appWindow.listen('show-window', () => {
+    appWindow.show();
+    appWindow.setFocus();
+  });
+  
+  appWindow.listen('hide-window', () => {
+    appWindow.hide();
+  });
+}
+
 // Можно добавить дополнительную логику здесь при необходимости
 window.addEventListener("DOMContentLoaded", () => {
   console.log('Приложение загружено');

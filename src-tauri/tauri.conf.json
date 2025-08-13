@@ -30,11 +30,16 @@
         "skipTaskbar": false,
         "alwaysOnTop": false,
         "visible": true,
-        "center": true
+        "center": true,
+        "closeToTray": true
       }
     ],
     "security": {
       "csp": null
+    },
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": false
     }
   },
   "bundle": {
